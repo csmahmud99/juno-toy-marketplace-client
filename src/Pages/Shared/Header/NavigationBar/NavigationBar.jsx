@@ -4,7 +4,7 @@ import logo from "../../../../assets/logo/juno-logo.png";
 const NavigationBar = () => {
     return (
         <div className="mx-auto max-w-7xl">
-            <div className="navbar bg-[#212529] py-4 px-8 text-neutral-content rounded-lg">
+            <div className="navbar bg-[#212529] py-4 px-8 text-neutral-content border-2 border-orange-300">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -12,20 +12,12 @@ const NavigationBar = () => {
                         </label>
                         <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-neutral rounded-box w-52 font-bold">
                             <li><Link to="/">Home</Link></li>
-                            <li tabIndex={0}>
-                                <a className="justify-between">
-                                    About
-                                    <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
-                                </a>
-                                <ul className="p-2 bg-neutral">
-                                    <li><Link to="#">About Juno</Link></li>
-                                    <li><Link to="#">Contact Us</Link></li>
-                                </ul>
-                            </li>
+                            <li><Link to="#">About Us</Link></li>
                             <li><Link to="#">All Toys</Link></li>
                             <li><Link to="#">My Toys</Link></li>
                             <li><Link to="#">Add a Toy</Link></li>
-                            <li><Link to="#">Blogs</Link></li>
+                            <li><Link to="#">Contact Us</Link></li>
+                            <li><Link to="/blog">Blogs</Link></li>
                         </ul>
                     </div>
                     <img src={logo} alt="juno-toy-marketplace-logo" />
@@ -33,20 +25,12 @@ const NavigationBar = () => {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 font-bold text-xl">
                         <li><Link to="/">Home</Link></li>
-                        <li tabIndex={0}>
-                            <a>
-                                About
-                                <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
-                            </a>
-                            <ul className="p-2 bg-neutral">
-                                <li><Link to="#">About Juno</Link></li>
-                                <li><Link to="#">Contact Us</Link></li>
-                            </ul>
-                        </li>
+                        <li><Link to="#">About Us</Link></li>
                         <li><Link to="#">All Toys</Link></li>
                         <li><Link to="#">My Toys</Link></li>
                         <li><Link to="#">Add a Toy</Link></li>
-                        <li><Link to="#">Blogs</Link></li>
+                        <li><Link to="#">Contact Us</Link></li>
+                        <li><Link to="/blog">Blogs</Link></li>
                     </ul>
                 </div>
                 <div className="navbar-end">
