@@ -2,7 +2,7 @@ import CountUp from 'react-countup';
 
 const HomeCounter = () => {
     return (
-        <div className="grid grid-cols-4 gap-6 bg-[#212529] mt-24 p-10 rounded-lg">
+        <div className="grid md:grid-cols-4 gap-6 bg-[#212529] mt-24 p-10 rounded-lg">
             <div className="card bg-[#3D4451] shadow-xl border-2 border-white text-indigo-100">
                 <div className="px-10 pt-10 text-center font-extrabold text-6xl text-red-600">
                     <CountUp end={100} className="border-2 border-white p-2 rounded-lg" />+

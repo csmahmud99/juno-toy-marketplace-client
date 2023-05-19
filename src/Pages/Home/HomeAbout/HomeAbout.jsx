@@ -8,8 +8,8 @@ const HomeAbout = () => {
             <div className="hero min-h-screen my-10">
                 <div className="hero-content flex-col lg:flex-row">
                     <div className="w-1/2 relative mb-28">
-                        <img src={homeAboutImage1} alt="home-about-image" className="w-3/4 shadow-2xl rounded-3xl border-8 border-red-600" />
-                        <img src={homeAboutImage2} alt="home-about-image" className="w-1/2 shadow-2xl border-4 border-white absolute right-20 top-2/3" />
+                        <img src="https://i.ibb.co/XDWLx4H/marvel-heros-home-about-1.jpg" alt="home-about-image" className="w-3/4 shadow-2xl rounded-3xl border-8 border-red-600" />
+                        <img src="https://i.ibb.co/RT5LZn4/marvel-spiderman-home-about-2.jpg" alt="home-about-image" className="w-1/2 shadow-2xl border-4 border-white absolute right-20 top-2/3" />
                     </div>
                     <div className="text-white w-1/2 space-y-5">
                         <p className="text-indigo-200">Welcome to</p>
