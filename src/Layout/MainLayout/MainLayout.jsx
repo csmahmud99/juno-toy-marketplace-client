@@ -5,9 +5,11 @@ import Footer from '../../Pages/Shared/Footer/Footer';
 
 const MainLayout = () => {
     return (
-        <div>
+        <div className="my-5">
             <NavigationBar />
-            <Outlet />
+            <div className="max-w-7xl mx-auto">
+                <Outlet />
+            </div>
             <Footer />
         </div>
     );
