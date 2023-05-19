@@ -1,5 +1,6 @@
 module.exports = {
-  env: { browser: true, es2020: true },
+  // 'require' & 'process' not defined - eslint problem solved 
+  env: { browser: true, es2020: true, node: true, },
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
