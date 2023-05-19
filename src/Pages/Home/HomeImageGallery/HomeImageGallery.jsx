@@ -26,7 +26,7 @@ const HomeImageGallery = () => {
     ];
 
     return (
-        <div>
+        <div className="my-10">
             <h2>This is Image Gallery</h2>
             <div className="grid md:grid-cols-2 gap-3 border-2 border-white p-10 text-red-600 font-extrabold text-2xl md:text-4xl text-center">
                 <div className="mt-4">
