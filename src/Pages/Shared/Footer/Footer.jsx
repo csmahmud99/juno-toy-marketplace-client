@@ -41,7 +41,7 @@ const Footer = () => {
 
             <div className="footer footer-center pt-2 px-10 pb-4 bg-neutral text-neutral-content">
                 <div>
-                    <p className="text-xl">Copyright &copy; 2023 | <a href="http://localhost:5173" className="text-orange-500 font-bold">Juno - Toys & Games</a> by <a href="https://github.com/csmahmud99" target="_blank" rel="noreferrer" className="text-orange-500 font-bold">CS Mahmud</a> | All Rights Reserved.</p>
+                    <p className="text-xl">Copyright &copy; 2023 | <Link href="http://localhost:5173" className="text-orange-500 font-bold">Juno - Toys & Games</Link> by <Link href="https://github.com/csmahmud99" target="_blank" className="text-orange-500 font-bold">CS Mahmud</Link> | All Rights Reserved.</p>
                 </div>
             </div>
         </div>

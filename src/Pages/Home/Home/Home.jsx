@@ -1,9 +1,10 @@
-import React from 'react';
+import SliderBanner from "../SliderBanner/SliderBanner";
+
 
 const Home = () => {
     return (
         <div>
-            <h2>This is Home Page Contents</h2>
+            <SliderBanner />
         </div>
     );
 };
