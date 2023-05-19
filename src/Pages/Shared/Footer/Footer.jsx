@@ -3,7 +3,7 @@ import logo from "../../../assets/logo/juno-logo.png";
 const Footer = () => {
     return (
         <div>
-            <footer className="footer p-10 bg-black text-neutral-content">
+            <footer className="footer p-10 bg-[#212529] text-neutral-content">
                 <div>
                     <img src={logo} alt="juno-toy-marketplace-footer-logo" />
                     <p><strong className="font-bolder text-2xl">Juno Toys & Games</strong><br />Providing quality & enjoyable toys <br />for your kids since 1992.</p>
@@ -45,7 +45,7 @@ const Footer = () => {
                 </div>
             </footer>
 
-            <div className="footer footer-center p-10 bg-neutral text-neutral-content">
+            <div className="footer footer-center pt-2 px-10 pb-4 bg-neutral text-neutral-content">
                 <div>
                     <p className="text-xl">Copyright &copy; 2023 | <a href="http://localhost:5173">Juno - Toys & Games</a> by <a href="https://github.com/csmahmud99" target="_blank" rel="noreferrer">CS Mahmud</a> | All Rights Reserved.</p>
                 </div>
