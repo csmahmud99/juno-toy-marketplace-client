@@ -17,10 +17,10 @@ const Footer = () => {
                         Find Us on Social Medias:
                     </p>
                     <div className="grid grid-flow-col gap-3">
-                        <Link to="https://www.facebook.com" target="_blank"><button className="btn btn-lg btn-error text-white"><FaFacebookSquare className="text-4xl" /></button></Link>
-                        <Link to="https://www.twitter.com" target="_blank"><button className="btn btn-lg btn-error text-white"><FaTwitterSquare className="text-4xl" /></button></Link>
-                        <Link to="https://www.linkedin.com" target="_blank"><button className="btn btn-lg btn-error text-white"><FaLinkedin className="text-4xl" /></button></Link>
-                        <Link to="https://www.youtube.com" target="_blank"><button className="btn btn-lg btn-error text-white"><FaYoutubeSquare className="text-4xl" /></button></Link>
+                        <Link to="https://www.facebook.com" target="_blank"><button className="btn btn-lg bg-red-600 text-white"><FaFacebookSquare className="text-4xl" /></button></Link>
+                        <Link to="https://www.twitter.com" target="_blank"><button className="btn btn-lg bg-red-600 text-white"><FaTwitterSquare className="text-4xl" /></button></Link>
+                        <Link to="https://www.linkedin.com" target="_blank"><button className="btn btn-lg bg-red-600 text-white"><FaLinkedin className="text-4xl" /></button></Link>
+                        <Link to="https://www.youtube.com" target="_blank"><button className="btn btn-lg bg-red-600 text-white"><FaYoutubeSquare className="text-4xl" /></button></Link>
                     </div>
                 </div>
 
