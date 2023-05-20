@@ -8,6 +8,26 @@ const AddToy = () => {
 
     const handleAddToy = event => {
         event.preventDefault();
+
+        const form = event.target;
+
+        const toyName = form.toyName.value;
+        const toyPhoto = form.toyPhoto.value;
+        const sellerName = form.sellerName.value;
+        const sellerEmail = form.sellerEmail.value;
+        const subCategory = form.subCategory.value;
+        const price = form.price.value;
+        const rating = form.rating.value;
+        const quantity = form.quantity.value;
+        const description = form.description.value;
+
+        // console.log(toyName, toyPhoto, sellerName, sellerEmail, subCategory, price, rating, quantity, description);
+
+        const order = {
+            toyName, toyPhoto, sellerName, sellerEmail, subCategory, price, rating, quantity, description
+        };
+
+        console.log(order);
     };
 
     return (
@@ -29,7 +49,7 @@ const AddToy = () => {
                                 <label className="label">
                                     <span className="label-text text-white">Photo URL of Toy</span>
                                 </label>
-                                <input type="text" name="photo" placeholder="Enter the Photo URL of the Toy" className="input input-bordered" required />
+                                <input type="text" name="toyPhoto" placeholder="Enter the Photo URL of the Toy" className="input input-bordered" required />
                             </div>
 
                             <div className="form-control">
@@ -43,7 +63,7 @@ const AddToy = () => {
                                 <label className="label">
                                     <span className="label-text text-white">Seller's Email</span>
                                 </label>
-                                <input type="email" name="email" placeholder="Enter Seller's Email Address" className="input input-bordered" required />
+                                <input type="email" name="sellerEmail" defaultValue={user?.email} placeholder="Enter Seller's Email Address" className="input input-bordered" required />
                             </div>
 
                             <div className="form-control">
