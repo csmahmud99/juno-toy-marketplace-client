@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import "./Register.css";
 
 const Register = () => {
     const handleRegister = event => {
@@ -20,28 +21,28 @@ const Register = () => {
                             <form onSubmit={handleRegister}>
                                 <div className="form-control">
                                     <label className="label">
-                                        <span className="label-text">Name</span>
+                                        <span className="label-text text-white">Name</span>
                                     </label>
                                     <input type="text" name="name" placeholder="Your Name" className="input input-bordered" required />
                                 </div>
 
                                 <div className="form-control">
                                     <label className="label">
-                                        <span className="label-text">Photo URL</span>
+                                        <span className="label-text text-white">Photo URL</span>
                                     </label>
                                     <input type="text" name="photo" placeholder="Your Photo URL" className="input input-bordered" required />
                                 </div>
 
                                 <div className="form-control">
                                     <label className="label">
-                                        <span className="label-text">Email</span>
+                                        <span className="label-text text-white">Email</span>
                                     </label>
                                     <input type="email" name="email" placeholder="Your Email Address" className="input input-bordered" required />
                                 </div>
 
                                 <div className="form-control">
                                     <label className="label">
-                                        <span className="label-text">Password</span>
+                                        <span className="label-text text-white">Password</span>
                                     </label>
                                     <input type="password" name="password" placeholder="Your Password" className="input input-bordered" required />
                                 </div>

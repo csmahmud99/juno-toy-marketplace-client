@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import "./Login.css";
 
 const Login = () => {
     const handleLogin = event => {
@@ -20,17 +21,17 @@ const Login = () => {
                             <form onSubmit={handleLogin}>
                                 <div className="form-control">
                                     <label className="label">
-                                        <span className="label-text">Email</span>
+                                        <span className="label-text text-white">Email</span>
                                     </label>
                                     <input type="email" name="email" placeholder="Enter Your Email Address" className="input input-bordered" required />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
-                                        <span className="label-text">Password</span>
+                                        <span className="label-text text-white">Password</span>
                                     </label>
                                     <input type="password" name="password" placeholder="Enter Your Password" className="input input-bordered" required />
                                     <label className="label">
-                                        <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                                        <a href="#" className="label-text-alt link link-hover text-orange-400">Forgot password?</a>
                                     </label>
                                 </div>
                                 <div className="form-control mt-6">
