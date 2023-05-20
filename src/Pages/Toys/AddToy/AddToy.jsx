@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
+import Swal from 'sweetalert2';
 
 const AddToy = () => {
     const { user } = useContext(AuthContext);
@@ -39,6 +40,14 @@ const AddToy = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Toy has been added successfully',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                    })
+                }
             });
     };
 
@@ -103,7 +112,7 @@ const AddToy = () => {
                                 <label className="label">
                                     <span className="label-text text-white">Available Quantity</span>
                                 </label>
-                                <input type="number" name="quantity" placeholder="Enter the Number of Available Toys" className="input input-bordered" required />
+                                <input type="number" name="quantity" min="0" placeholder="Enter the Number of Available Toys" className="input input-bordered" required />
                             </div>
                         </div>
 

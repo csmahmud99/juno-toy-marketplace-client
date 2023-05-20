@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import "./Register.css";
 import { useContext } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
+import Swal from 'sweetalert2';
 
 const Register = () => {
     const { createUser, updateUser } = useContext(AuthContext);
@@ -22,6 +23,14 @@ const Register = () => {
                 const user = userCredential.user;
                 console.log(user);
                 updateUser(name, photo);
+                if (user.uid) {
+                    Swal.fire({
+                        title: 'Done',
+                        text: 'You have successfully registered to Juno Toys and Games',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                    });
+                }
             })
             .catch(error => {
                 console.log("error", error.message);
