@@ -23,11 +23,23 @@ const AddToy = () => {
 
         // console.log(toyName, toyPhoto, sellerName, sellerEmail, subCategory, price, rating, quantity, description);
 
-        const order = {
+        const sendAddToy = {
             toyName, toyPhoto, sellerName, sellerEmail, subCategory, price, rating, quantity, description
         };
 
-        console.log(order);
+        console.log(sendAddToy);
+
+        fetch("http://localhost:5000/addToys", {
+            method: "POST",
+            headers: {
+                "content-type": "application/json",
+            },
+            body: JSON.stringify(sendAddToy)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+            });
     };
 
     return (
@@ -75,16 +87,16 @@ const AddToy = () => {
 
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text text-white">Price</span>
+                                    <span className="label-text text-white">Price in USD($)</span>
                                 </label>
-                                <input type="number" name="price" placeholder="Enter Price of the Toy" className="input input-bordered" required />
+                                <input type="number" name="price" min="0" step="any" placeholder="Enter Price of the Toy" className="input input-bordered" required />
                             </div>
 
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text text-white">Rating</span>
                                 </label>
-                                <input type="number" name="rating" placeholder="Enter the Rating of the Toy" className="input input-bordered" required />
+                                <input type="number" name="rating" min="0" step="any" placeholder="Enter the Rating of the Toy" className="input input-bordered" required />
                             </div>
 
                             <div className="form-control">
