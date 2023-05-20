@@ -16,7 +16,7 @@ const NavigationBar = () => {
                             <li><Link to="#">About Us</Link></li>
                             <li><Link to="#">All Toys</Link></li>
                             <li><Link to="#">My Toys</Link></li>
-                            <li><Link to="#">Add a Toy</Link></li>
+                            <li><Link to="/add-toy">Add a Toy</Link></li>
                             <li><Link to="#">Contact Us</Link></li>
                             <li><Link to="/blog">Blogs</Link></li>
                         </ul>
@@ -29,7 +29,7 @@ const NavigationBar = () => {
                         <li><Link to="#">About Us</Link></li>
                         <li><Link to="#">All Toys</Link></li>
                         <li><Link to="#">My Toys</Link></li>
-                        <li><Link to="#">Add a Toy</Link></li>
+                        <li><Link to="/add-toy">Add a Toy</Link></li>
                         <li><Link to="#">Contact Us</Link></li>
                         <li><Link to="/blog">Blogs</Link></li>
                     </ul>
