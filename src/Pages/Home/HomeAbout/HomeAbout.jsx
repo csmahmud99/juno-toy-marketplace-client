@@ -1,6 +1,4 @@
 import { Link } from "react-router-dom";
-import homeAboutImage1 from "../../../assets/marvel-heros-home-about-1.jpg";
-import homeAboutImage2 from "../../../assets/marvel-spiderman-home-about-2.jpg";
 
 const HomeAbout = () => {
     return (

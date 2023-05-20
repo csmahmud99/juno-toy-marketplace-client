@@ -2,16 +2,18 @@ import { Link } from "react-router-dom";
 import "./Login.css";
 import { useContext } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
+import { FaGoogle } from 'react-icons/fa';
 
 const Login = () => {
-    const { signIn } = useContext(AuthContext);
+    const { signIn, signInWithGoogle } = useContext(AuthContext);
 
+    // Log In with Email & Password - Button Function
     const handleLogin = event => {
         event.preventDefault();
 
         const form = event.target;
         const email = form.email.value;
-        const password = form.email.password;
+        const password = form.password.value;
 
         console.log(email, password);
 
@@ -22,6 +24,18 @@ const Login = () => {
             })
             .catch(error => {
                 console.log("Error:", error.message);
+            });
+    };
+
+    // Google Sign In - Button Function
+    const handleGoogleSignIn = () => {
+        signInWithGoogle()
+            .then(result => {
+                const loggedInUser = result.user;
+                console.log(loggedInUser);
+            })
+            .catch(error => {
+                console.log(error.message);
             });
     };
 
@@ -57,6 +71,10 @@ const Login = () => {
                                     <input type="submit" value="Log In" className="btn btn-outline bg-red-600 text-white" />
                                 </div>
                             </form>
+
+                            <div>
+                                <button onClick={handleGoogleSignIn} className="btn btn-outline bg-red-600 w-full text-white"><FaGoogle className="text-xl mr-2" /> Log In with Google</button>
+                            </div>
 
                             <p className="text-white text-center mt-4">
                                 New to <strong className="text-indigo-200 text-xl">Juno - Toys and Games</strong>? Please, <Link to="/register" className="text-indigo-300 font-bold">Register</Link>.

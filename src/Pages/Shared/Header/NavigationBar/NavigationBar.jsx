@@ -1,8 +1,25 @@
 import { Link } from "react-router-dom";
 import logo from "../../../../assets/logo/juno-logo.png";
 import { FaHome } from 'react-icons/fa';
+import { useContext } from "react";
+import { AuthContext } from "../../../../providers/AuthProvider";
 
 const NavigationBar = () => {
+    const { user, logOut } = useContext(AuthContext);
+    // console.log(user);
+
+    // User Sign Out - Button Function
+    const handleLogOut = () => {
+        logOut()
+            .then(() => {
+                console.log("User is Successfully Logged Out");
+            })
+            .catch(error => {
+                console.log(error.message);
+            });
+    };
+
+
     return (
         <div className="mx-auto max-w-7xl">
             <div className="navbar bg-[#212529] py-4 px-8 text-neutral-content border-2 border-orange-300">
@@ -35,7 +52,14 @@ const NavigationBar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <Link className="btn">Get started</Link>
+                    <div className="w-1/2">
+                        {user && <img title={user?.displayName} src={user?.photoURL} alt="user-profile-image" className="rounded-full" style={{width: "50px"}} />}
+                    </div>
+                    <div className="w-full">
+                        {user ?
+                            <button onClick={handleLogOut} className="btn btn-outline bg-red-600 text-white mr-2">Sign Out</button>
+                            : <Link to="/login"><button className="btn btn-outline bg-red-600 text-white">Sign In</button></Link>}
+                    </div>
                 </div>
             </div>
         </div>
