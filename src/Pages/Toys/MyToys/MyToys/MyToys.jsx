@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../../providers/AuthProvider";
 import MyToysRow from "../MyToysRow/MyToysRow";
+import Swal from 'sweetalert2';
 
 const MyToys = () => {
     const { user } = useContext(AuthContext);
@@ -13,7 +14,36 @@ const MyToys = () => {
                 console.log(data);
                 setMyToys(data);
             });
-    }, [user?.email])
+    }, [user?.email]);
+
+    const handleDelete = _id => {
+        Swal.fire({
+            title: 'Are you sure that you want to DELETE this Toy?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, DELETE this Toy!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/toys/${_id}`, {
+                    method: "DELETE",
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                    });
+                Swal.fire(
+                    'Deleted!',
+                    'Your Toy has been successfully deleted.',
+                    'success'
+                );
+                const remaining = myToys.filter(myToy => myToy._id !== _id);
+                setMyToys(remaining);
+            }
+        });
+    };
 
     return (
         <div>
@@ -37,7 +67,8 @@ const MyToys = () => {
                         {
                             myToys.map(myToy => <MyToysRow
                                 key={myToy._id}
-                                myToy={myToy}
+                                myToy={myToy} 
+                                handleDelete={handleDelete}
                             />)
                         }
                     </tbody>
