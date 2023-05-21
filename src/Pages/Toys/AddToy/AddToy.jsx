@@ -15,22 +15,22 @@ const AddToy = () => {
         const toyName = form.toyName.value;
         const toyPhoto = form.toyPhoto.value;
         const sellerName = form.sellerName.value;
-        const sellerEmail = form.sellerEmail.value;
+        const email = form.email.value;
         const subCategory = form.subCategory.value;
         const price = form.price.value;
         const rating = form.rating.value;
         const quantity = form.quantity.value;
         const description = form.description.value;
 
-        // console.log(toyName, toyPhoto, sellerName, sellerEmail, subCategory, price, rating, quantity, description);
+        // console.log(toyName, toyPhoto, sellerName, email, subCategory, price, rating, quantity, description);
 
         const sendAddToy = {
-            toyName, toyPhoto, sellerName, sellerEmail, subCategory, price, rating, quantity, description
+            toyName, toyPhoto, sellerName, email, subCategory, price, rating, quantity, description
         };
 
         console.log(sendAddToy);
 
-        fetch("http://localhost:5000/addToys", {
+        fetch("http://localhost:5000/toys", {
             method: "POST",
             headers: {
                 "content-type": "application/json",
@@ -84,7 +84,7 @@ const AddToy = () => {
                                 <label className="label">
                                     <span className="label-text text-white">Seller's Email</span>
                                 </label>
-                                <input type="email" name="sellerEmail" defaultValue={user?.email} placeholder="Enter Seller's Email Address" className="input input-bordered" required />
+                                <input type="email" name="email" defaultValue={user?.email} placeholder="Enter Seller's Email Address" className="input input-bordered" required />
                             </div>
 
                             <div className="form-control">

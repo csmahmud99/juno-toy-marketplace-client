@@ -32,8 +32,12 @@ const NavigationBar = () => {
                             <li><Link to="/"><FaHome />Home</Link></li>
                             <li><Link to="#">About Us</Link></li>
                             <li><Link to="#">All Toys</Link></li>
-                            <li><Link to="#">My Toys</Link></li>
-                            <li><Link to="/add-toy">Add a Toy</Link></li>
+                            {
+                                user?.email && <>
+                                    <li><Link to="/my-toys">My Toys</Link></li>
+                                    <li><Link to="/add-toy">Add a Toy</Link></li>
+                                </>
+                            }
                             <li><Link to="#">Contact Us</Link></li>
                             <li><Link to="/blog">Blogs</Link></li>
                         </ul>
@@ -45,15 +49,19 @@ const NavigationBar = () => {
                         <li><Link to="/"><FaHome />Home</Link></li>
                         <li><Link to="#">About Us</Link></li>
                         <li><Link to="#">All Toys</Link></li>
-                        <li><Link to="#">My Toys</Link></li>
-                        <li><Link to="/add-toy">Add a Toy</Link></li>
+                        {
+                            user?.email && <>
+                                <li><Link to="/my-toys">My Toys</Link></li>
+                                <li><Link to="/add-toy">Add a Toy</Link></li>
+                            </>
+                        }
                         <li><Link to="#">Contact Us</Link></li>
                         <li><Link to="/blog">Blogs</Link></li>
                     </ul>
                 </div>
                 <div className="navbar-end">
                     <div className="w-1/2">
-                        {user && <img title={user?.displayName} src={user?.photoURL} alt="user-profile-image" className="rounded-full" style={{width: "50px"}} />}
+                        {user && <img title={user?.displayName} src={user?.photoURL} alt="user-profile-image" className="rounded-full" style={{ width: "50px" }} />}
                     </div>
                     <div className="w-full">
                         {user ?
