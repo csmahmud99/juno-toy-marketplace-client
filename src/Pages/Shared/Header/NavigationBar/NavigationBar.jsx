@@ -31,7 +31,7 @@ const NavigationBar = () => {
                         <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-neutral rounded-box w-52 font-bold">
                             <li><Link to="/"><FaHome />Home</Link></li>
                             <li><Link to="#">About Us</Link></li>
-                            <li><Link to="#">All Toys</Link></li>
+                            <li><Link to="/all-toys">All Toys</Link></li>
                             {
                                 user?.email && <>
                                     <li><Link to="/my-toys">My Toys</Link></li>
@@ -48,7 +48,7 @@ const NavigationBar = () => {
                     <ul className="menu menu-horizontal px-1 font-bold text-xl">
                         <li><Link to="/"><FaHome />Home</Link></li>
                         <li><Link to="#">About Us</Link></li>
-                        <li><Link to="#">All Toys</Link></li>
+                        <li><Link to="/all-toys">All Toys</Link></li>
                         {
                             user?.email && <>
                                 <li><Link to="/my-toys">My Toys</Link></li>
