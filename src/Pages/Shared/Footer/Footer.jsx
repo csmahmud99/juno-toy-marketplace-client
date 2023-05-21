@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import logo from "../../../assets/logo/juno-logo.png";
 import { FaFacebookSquare, FaTwitterSquare, FaLinkedin, FaYoutubeSquare } from 'react-icons/fa';
+import { FaGlobeEurope, FaEnvelope, FaPhoneSquare } from 'react-icons/fa';
 
 const Footer = () => {
     return (
@@ -8,7 +9,54 @@ const Footer = () => {
             <footer className="footer p-10 bg-[#212529] text-neutral-content">
                 <div>
                     <img src={logo} alt="juno-toy-marketplace-footer-logo" />
-                    <p><strong className="font-bolder text-2xl">Juno Toys & Games</strong><br />Providing quality & enjoyable toys <br />for your kids since 1992.</p>
+                    <div>
+                        <strong className="font-bolder text-2xl">Juno Toys & Games</strong><br />Providing quality & enjoyable toys <br />for your kids since 1992.
+                    </div>
+                    <div>
+                        <div className="flex gap-1 items-center text-sm">
+                            <FaGlobeEurope /><strong>Address:</strong>
+                        </div>
+                        <div>
+                            <p>
+                                24/1, Downing Street, USA-2744.  
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <div className="flex gap-1 items-center text-sm">
+                            <FaEnvelope /><strong>Email:</strong>
+                        </div>
+                        <div>
+                            <p>
+                                info@juno.com  
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <div className="flex gap-1 items-center text-sm">
+                            <FaPhoneSquare /><strong>Phone:</strong>
+                        </div>
+                        <div>
+                            <p>
+                                (+1) 234-567-89  
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <span className="footer-title">Company</span>
+                    <a className="link link-hover">About us</a>
+                    <a className="link link-hover">Contact</a>
+                    <a className="link link-hover">Jobs</a>
+                    <a className="link link-hover">Press kit</a>
+                </div>
+
+                <div>
+                    <span className="footer-title">Legal</span>
+                    <a className="link link-hover">Terms of use</a>
+                    <a className="link link-hover">Privacy policy</a>
+                    <a className="link link-hover">Cookie policy</a>
                 </div>
 
                 <div>
@@ -22,20 +70,6 @@ const Footer = () => {
                         <Link to="https://www.linkedin.com" target="_blank"><button className="btn btn-lg bg-red-600 text-white"><FaLinkedin className="text-4xl" /></button></Link>
                         <Link to="https://www.youtube.com" target="_blank"><button className="btn btn-lg bg-red-600 text-white"><FaYoutubeSquare className="text-4xl" /></button></Link>
                     </div>
-                </div>
-
-                <div>
-                    <span className="footer-title">Company</span>
-                    <a className="link link-hover">About us</a>
-                    <a className="link link-hover">Contact</a>
-                    <a className="link link-hover">Jobs</a>
-                    <a className="link link-hover">Press kit</a>
-                </div>
-                <div>
-                    <span className="footer-title">Legal</span>
-                    <a className="link link-hover">Terms of use</a>
-                    <a className="link link-hover">Privacy policy</a>
-                    <a className="link link-hover">Cookie policy</a>
                 </div>
             </footer>
 
