@@ -1,19 +1,24 @@
-// import { useContext } from "react";
-// import { AuthContext } from "../../../../providers/AuthProvider";
-// import MyToysRow from "../MyToysRow/MyToysRow";
-import { useLoaderData } from "react-router-dom";
 import AllToysRow from "../AllToysRow/AllToysRow";
 import useTitle from "../../../../hooks/useTitle";
+import { useEffect, useState } from "react";
 
 const AllToys = () => {
     useTitle("All Toys");
-    // const { user } = useContext(AuthContext);
-    const toys = useLoaderData();
-    // console.log(toys);
+
+    const [allToys, setAllToys] = useState([]);
+
+    useEffect(() => {
+        fetch("https://toy-marketplace-server-bice.vercel.app/toys")
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                setAllToys(data);
+            });
+    }, []);
 
     return (
         <div>
-            <h2 className="text-5xl font-bold text-red-600 text-center mb-10">All Toys: {toys.length}</h2>
+            <h2 className="text-5xl font-bold text-red-600 text-center mb-10">All Toys: {allToys.length}</h2>
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
                     {/* head */}
@@ -28,9 +33,9 @@ const AllToys = () => {
                     </thead>
                     <tbody>
                         {
-                            toys.map(toy => <AllToysRow
-                                key={toy._id}
-                                toy={toy}
+                            allToys.map(allToy => <AllToysRow
+                                key={allToy._id}
+                                allToy={allToy}
                             />)
                         }
                     </tbody>

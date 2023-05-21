@@ -9,11 +9,13 @@ import MyToys from "../../Pages/Toys/MyToys/MyToys/MyToys";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import UpdateToy from "../../Pages/Toys/UpdateToy/UpdateToy";
 import AllToys from "../../Pages/Toys/AllToys/AllToys/AllToys";
+import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <MainLayout />,
+        errorElement: <ErrorPage />,
         children: [
             {
                 path: "/",
@@ -33,8 +35,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/all-toys",
-                element: <AllToys />,
-                loader: () => fetch("https://toy-marketplace-server-bice.vercel.app/toys")
+                element: <AllToys />
             },
             {
                 path: "/update-toy/:id",
