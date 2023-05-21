@@ -3,8 +3,10 @@ import "./Login.css";
 import { useContext } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
 import { FaGoogle } from 'react-icons/fa';
+import useTitle from "../../../hooks/useTitle";
 
 const Login = () => {
+    useTitle("Sign In");
     const { signIn, signInWithGoogle } = useContext(AuthContext);
 
     // Log In with Email & Password - Button Function

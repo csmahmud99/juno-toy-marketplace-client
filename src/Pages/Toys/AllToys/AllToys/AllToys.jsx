@@ -3,8 +3,10 @@
 // import MyToysRow from "../MyToysRow/MyToysRow";
 import { useLoaderData } from "react-router-dom";
 import AllToysRow from "../AllToysRow/AllToysRow";
+import useTitle from "../../../../hooks/useTitle";
 
 const AllToys = () => {
+    useTitle("All Toys");
     // const { user } = useContext(AuthContext);
     const toys = useLoaderData();
     // console.log(toys);
