@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const MyToysRow = ({ myToy, handleDelete }) => {
     const { _id, toyName, toyPhoto, sellerName, email, subCategory, price, rating, quantity, description } = myToy;
 
@@ -40,13 +42,15 @@ const MyToysRow = ({ myToy, handleDelete }) => {
                         <h3 className="font-bold text-lg">Detail Description</h3>
                         <p className="py-4">{description}</p>
                         <div className="modal-action">
-                            <label htmlFor="my-modal-5" className="btn">Yay!</label>
+                            <label htmlFor="my-modal-5" className="btn">Close</label>
                         </div>
                     </div>
                 </div>
             </td>
             <th>
-                <button className="btn btn-sm btn-outline">Update</button>
+                <Link to={`/update-toy/${_id}`}>
+                    <button className="btn btn-sm btn-outline">Update</button>
+                </Link>
             </th>
         </tr>
     );
