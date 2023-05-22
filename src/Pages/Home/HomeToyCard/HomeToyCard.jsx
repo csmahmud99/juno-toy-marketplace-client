@@ -1,9 +1,22 @@
 import Rating from "react-rating";
 import { HiOutlineStar, HiStar } from "react-icons/hi";
+import { Link, Navigate } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../../providers/AuthProvider";
+import Swal from 'sweetalert2';
 
 const HomeToyCard = ({ allUserToy }) => {
     // console.log(allUserToy);
     const { _id, toyName, toyPhoto, price, rating } = allUserToy || {};
+    const { user } = useContext(AuthContext);
+
+    const handleViewDetails = () => {
+        Swal.fire(
+            'You have to log in first',
+            'to view this.',
+            'info'
+        )
+    };
 
     return (
         <div>
@@ -15,7 +28,7 @@ const HomeToyCard = ({ allUserToy }) => {
                     <h2 className="card-title text-indigo-200 text-2xl">{toyName}</h2>
                     <p className="text-white"><strong>Price:</strong> ${price}</p>
                     <div className="card-actions flex justify-end items-center gap-8">
-                        <div className="text-white text-base">
+                        <div className="text-red-600 text-base bg-white p-2 rounded-md">
                             <Rating placeholderRating={rating}
                                 emptySymbol={<HiOutlineStar />}
                                 placeholderSymbol={<HiStar className="text-yellow-400" />}
@@ -25,7 +38,14 @@ const HomeToyCard = ({ allUserToy }) => {
                         </div>
 
                         <div>
-                            <button className="btn btn-error btn-sm bg-red-600 text-white">View Details</button>
+                            {user?.email ?
+                                <Link>
+                                    <button className="btn btn-error btn-sm bg-red-600 text-white">View Details</button>
+                                </Link>
+                                : <Link to={`/single-toy/${_id}`}>
+                                    <button onClick={handleViewDetails} className="btn btn-error btn-sm bg-red-600 text-white">View Details</button>
+                                </Link>
+                            }
                         </div>
                     </div>
                 </div>

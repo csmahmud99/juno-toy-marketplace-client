@@ -5,7 +5,7 @@ import useTitle from "../../../hooks/useTitle";
 const UpdateToy = () => {
     const toy = useLoaderData();
 
-    const { _id, toyName, toyPhoto, price, quantity, description } = toy;
+    const { _id, toyName, toyPhoto, price, quantity, description } = toy || {};
 
     useTitle("Update Toy");
 
@@ -24,7 +24,7 @@ const UpdateToy = () => {
 
         console.log(updatedToy);
 
-        fetch(`http://localhost:5000/toys/${_id}`, {
+        fetch(`https://toy-marketplace-server-bice.vercel.app/toys/${_id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json",

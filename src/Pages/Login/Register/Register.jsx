@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Register.css";
 import { useContext } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
@@ -7,6 +7,7 @@ import useTitle from "../../../hooks/useTitle";
 
 const Register = () => {
     useTitle("Sign Up");
+    const navigate = useNavigate();
     const { createUser, updateUser } = useContext(AuthContext);
 
     const handleRegister = event => {
@@ -32,6 +33,7 @@ const Register = () => {
                         icon: 'success',
                         confirmButtonText: 'Cool'
                     });
+                    navigate("/");
                 }
             })
             .catch(error => {

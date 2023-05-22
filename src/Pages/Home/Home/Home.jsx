@@ -11,8 +11,9 @@ const Home = () => {
     const [allUserToys, setAllUserToys] = useState([]);
     const [activeTab, setActiveTab] = useState("Marvel");
 
+
     useEffect(() => {
-        fetch(`http://localhost:5000/allToysBySubCategory/${activeTab}`)
+        fetch(`https://toy-marketplace-server-bice.vercel.app/allToysBySubCategory/${activeTab}`)
             .then(res => res.json())
             .then(data => {
                 setAllUserToys(data);

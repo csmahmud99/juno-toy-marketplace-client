@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./Login.css";
 import { useContext } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
@@ -8,6 +8,11 @@ import useTitle from "../../../hooks/useTitle";
 const Login = () => {
     useTitle("Sign In");
     const { signIn, signInWithGoogle } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+    console.log(location);
+
+    const from = location?.state?.from?.pathname || "/";
 
     // Log In with Email & Password - Button Function
     const handleLogin = event => {
@@ -23,6 +28,8 @@ const Login = () => {
             .then(userCredential => {
                 const user = userCredential.user;
                 console.log(user);
+                form.reset();
+                navigate(from, { replace: true });
             })
             .catch(error => {
                 console.log("Error:", error.message);
@@ -35,6 +42,7 @@ const Login = () => {
             .then(result => {
                 const loggedInUser = result.user;
                 console.log(loggedInUser);
+                navigate(from, { replace: true });
             })
             .catch(error => {
                 console.log(error.message);
