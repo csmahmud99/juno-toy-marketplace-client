@@ -40,7 +40,7 @@ const router = createBrowserRouter([
             {
                 path: "/update-toy/:id",
                 element: <UpdateToy />,
-                loader: ({params}) => fetch(`https://toy-marketplace-server-bice.vercel.app/toys/${params.id}`)
+                loader: ({params}) => fetch(`http://localhost:5000/toys/${params.id}`)
             },
             {
                 path: "/login",

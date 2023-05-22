@@ -8,7 +8,7 @@ const AllToys = () => {
     const [allToys, setAllToys] = useState([]);
 
     useEffect(() => {
-        fetch("https://toy-marketplace-server-bice.vercel.app/toys")
+        fetch("http://localhost:5000/toys")
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -33,7 +33,7 @@ const AllToys = () => {
                     </thead>
                     <tbody>
                         {
-                            allToys.map(allToy => <AllToysRow
+                            allToys?.map(allToy => <AllToysRow
                                 key={allToy._id}
                                 allToy={allToy}
                             />)
