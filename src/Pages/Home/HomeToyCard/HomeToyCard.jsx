@@ -39,7 +39,7 @@ const HomeToyCard = ({ allUserToy }) => {
 
                         <div>
                             {user?.email ?
-                                <Link>
+                                <Link to={`/single-toy/${_id}`}>
                                     <button className="btn btn-error btn-sm bg-red-600 text-white">View Details</button>
                                 </Link>
                                 : <Link to={`/single-toy/${_id}`}>
