@@ -22,7 +22,7 @@ const AllToys = () => {
     {/* This button code is commented for the clash with vercel with server side code, nicely working with my local server */ }
     // Data Fetch for the Search Bar
     /* const handleSearch = () => {
-        fetch(`http://localhost:5000/toySearchByName/${searchText}`)
+        fetch(`https://toy-marketplace-server-bice.vercel.app/${searchText}`)
             .then(res => res.json())
             .then(data => {
                 setAllToys(data);
