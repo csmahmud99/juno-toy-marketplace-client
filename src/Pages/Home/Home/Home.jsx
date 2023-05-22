@@ -11,7 +11,7 @@ const Home = () => {
     const [allUserToys, setAllUserToys] = useState([]);
     const [activeTab, setActiveTab] = useState("Marvel");
 
-
+    // All toys by their category-wise search for the tab
     useEffect(() => {
         fetch(`https://toy-marketplace-server-bice.vercel.app/allToysBySubCategory/${activeTab}`)
             .then(res => res.json())
@@ -27,6 +27,7 @@ const Home = () => {
     return (
         <div>
             <SliderBanner />
+            {/* AOS Package is used in the 'HomeAbout' component with left-side image */}
             <HomeAbout />
             <HomeCounter />
             <div className="my-10 p-8 bg-[#212529] rounded-lg">
