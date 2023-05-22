@@ -19,15 +19,14 @@ const AllToys = () => {
             });
     }, [activeTab]);
 
-    {/* This button code is commented for the clash with vercel with server side code, nicely working with my local server */ }
     // Data Fetch for the Search Bar
-    /* const handleSearch = () => {
-        fetch(`https://toy-marketplace-server-bice.vercel.app/${searchText}`)
+    const handleSearch = () => {
+        fetch(`https://toy-marketplace-server-bice.vercel.app/toySearchByName/${searchText}`)
             .then(res => res.json())
             .then(data => {
                 setAllToys(data);
             });
-    }; */
+    };
 
     const handleTabClick = (tabName) => {
         setActiveTab(tabName);
@@ -41,11 +40,7 @@ const AllToys = () => {
             <div className="mb-10 text-center">
                 <div className="bg-[#212529] p-4 text-center w-1/3 mx-auto rounded-md">
                     <input className="p-1" onChange={event => setSearchText(event.target.value)} type="text" />{" "}
-
-                    {/* This button code is commented for the clash with vercel with server side code, nicely working with my local server */}
-                    {/* <button onClick={handleSearch} className="btn btn-error btn-sm bg-[#3D4451] text-white ml-3">Search</button> */}
-
-                    <button className="btn btn-error btn-sm bg-[#3D4451] text-white ml-3">Search</button>
+                    <button onClick={handleSearch} className="btn btn-error btn-sm bg-[#3D4451] text-white ml-3">Search</button>
                 </div>
             </div>
 
